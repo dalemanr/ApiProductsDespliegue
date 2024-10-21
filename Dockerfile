@@ -1,6 +1,6 @@
 FROM eclipse-temurin:17-jdk as build
 
-COPY    . /app
+COPY . /app
 WORKDIR /app
 
 RUN chmod +x mvnw
@@ -17,4 +17,4 @@ COPY --from=build /app/app.jar .
 RUN useradd runtime
 USER runtime
 
-ENTRYPOINT [ "java", "-Dserver.port=${PORT}", "-jar", "app.jar" ]
+ENTRYPOINT [ "java", "-Dserver.port=${PORT}", "-jar", "app.jar" ]r.port=${PORT}", "-jar", "app.jar" ]
